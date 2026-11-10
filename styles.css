@@ -1,0 +1,43 @@
+/* Laborly site: system fonts only (no web fonts, no CDNs), the app's tokens (spec/06-design.md), light and dark. */
+:root {
+  --bg:#f2f4f3; --card:#fff; --ink:#14201c; --soft:#5b6964; --rule:rgba(20,32,28,.12);
+  --accent:#1f6e5a; --on-accent:#fff; --tint:rgba(31,110,90,.11); --amber:#f2b45a; --amber-ink:#a8650a;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:#000; --card:#161c1a; --ink:#eef3f1; --soft:#a7b3ae; --rule:rgba(255,255,255,.13);
+    --accent:#5fc7a6; --on-accent:#04211a; --tint:rgba(95,199,166,.16); --amber-ink:#f2b45a;
+  }
+}
+* { box-sizing:border-box }
+html { -webkit-text-size-adjust:100% }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+a { color:var(--accent) }
+.wrap { max-width:760px; margin:0 auto; padding:0 16px }
+.top { display:flex; justify-content:space-between; align-items:center; padding:20px 0; gap:12px; flex-wrap:wrap }
+.brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; color:var(--ink); text-decoration:none }
+.brand img { width:36px; height:36px; border-radius:8px }
+nav a { margin-left:18px; text-decoration:none; font-weight:600 }
+.hero { text-align:center; padding:48px 0 32px }
+.hero .icon { width:128px; height:128px; border-radius:28px; box-shadow:0 10px 30px rgba(0,0,0,.15) }
+.hero h1 { font-size:clamp(34px, 6vw, 52px); line-height:1.1; margin:24px 0 12px; letter-spacing:-.02em }
+.hero h1 em { font-style:normal; color:var(--amber-ink) }
+.hero p { color:var(--soft); font-size:20px; max-width:560px; margin:0 auto }
+.store-badge { display:inline-block; margin-top:24px; line-height:0 }
+.store-badge img { height:54px; width:auto } /* Apple's artwork as supplied */
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin:32px 0 }
+.grid div { background:var(--card); border-radius:16px; padding:18px 20px; border-top:4px solid var(--accent) }
+.grid div:nth-child(3n+2) { border-top-color:var(--amber) }
+.grid h3 { margin:0 0 6px; font-size:18px }
+.grid p { margin:0; color:var(--soft); font-size:15px; line-height:1.5 }
+.note { background:var(--tint); border-radius:16px; padding:16px 20px; color:var(--ink); font-size:15px; margin:24px 0 }
+.doc { background:var(--card); border-radius:16px; padding:24px 28px; margin:8px 0 32px; overflow-wrap:anywhere }
+.doc h1 { margin-top:0; font-size:34px; line-height:1.15 }
+.doc h2 { font-size:21px; margin:28px 0 8px }
+.doc .updated { color:var(--soft); margin-top:-8px }
+.doc li { margin:6px 0 }
+footer { border-top:1px solid var(--rule); padding:20px 0 40px; color:var(--soft); font-size:15px }
+footer .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap }
+@media (max-width: 520px) { .doc { padding:20px } nav a { margin-left:12px } }
